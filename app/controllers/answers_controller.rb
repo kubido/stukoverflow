@@ -5,9 +5,9 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(answer_params)
     if @answer.save
-      flash[:success] = 'La respuesta ha sido registrada con éxito.'
+      flash[:success] = 'Jawaban berhasil dibuat.'
     else
-      flash[:danger] = 'La respuesta no puede estar en blanco.'
+      flash[:danger] = 'Jawaban gagal dibuat.'
     end
     redirect_to question_path(params[:question_id])
   end
@@ -17,14 +17,14 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      flash[:success] = 'La respuesta ha sido actualizada con éxito.'
+      flash[:success] = 'Jawaban berhasil diperbarui.'
     end
     redirect_to question_path(params[:question_id])
   end
 
   def destroy
     if @answer.destroy
-      flash[:success] = 'La respuesta ha sido eliminada con éxito.'
+      flash[:success] = 'Jawaban berhasil dihapus.'
     end
     redirect_to question_path(params[:question_id])
   end

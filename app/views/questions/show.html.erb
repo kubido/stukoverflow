@@ -6,8 +6,8 @@
           <tr>
             <td colspan="2">
               <div class="question__header">
-              <h1><%= @question.title %></h1>
-            </div>
+                <h1><%= @question.title %></h1>
+              </div>
             </td>
           </tr>
           <tr>
@@ -28,28 +28,28 @@
                     <tr>
                       <td class="vt">
                         <% if logged_in? && @question.user == current_user %>
-                          <div class="question__actions">
-                            <ul>
-                              <li>
-                                <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Editar"
+                        <div class="question__actions">
+                          <ul>
+                            <li>
+                              <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Sunting"
                                       .html_safe,
                                       edit_question_path(@question) %>
-                              </li>
-                              <li>
-                                <%= link_to " <span class='glyphicon glyphicon-trash'></span> Eliminar"
+                            </li>
+                            <li>
+                              <%= link_to " <span class='glyphicon glyphicon-trash'></span> Hapus"
                                       .html_safe, @question,
                                       method: :delete,
-                                      data: { confirm: "¿Estás seguro de eliminar esta pregunta?" } %>
-                              </li>
-                            </ul>
-                          </div>
+                                      data: { confirm: "Apakah Anda yakin Anda menghapus pertanyaan ini?" } %>
+                            </li>
+                          </ul>
+                        </div>
                         <% end %>
                       </td>
                       <td class="user-signature">
                         <div class="user-action-time">
-                          formulada hace <%= time_ago_in_words @question.created_at %>
+                          dibuat <%= time_ago_in_words @question.created_at %> lalu
                         </div>
-                        <div class= "user-details">
+                        <div class="user-details">
                           <%= mail_to @question.user.email %>
                         </div>
                       </td>
@@ -72,12 +72,12 @@
                       <td></td>
                       <td>
                         <% if logged_in? %>
-                          <div class="comment-link-form">
-                            <a id="comments-link" href="#">añade un comentario</a>
-                          </div>
-                          <div class="comment-form">
-                            <%= render 'comments/form', commentable: @question, url_path: question_comments_path(@question) %>
-                          </div>
+                        <div class="comment-link-form">
+                          <a id="comments-link" href="#">tambahkan komentar</a>
+                        </div>
+                        <div class="comment-form">
+                          <%= render 'comments/form', commentable: @question, url_path: question_comments_path(@question) %>
+                        </div>
                         <% end %>
                       </td>
                     </tr>
@@ -91,16 +91,16 @@
     </div>
     <div class="answers">
       <div class="answers__header">
-        <h2><%= pluralize(@question.answers.count, 'Respuesta', 'Respuestas') %>:</h2>
+        <h2><%= pluralize(@question.answers.count, 'Jawaban', 'Jawaban') %>:</h2>
       </div>
 
       <% if @question.answers.count > 0 %>
-        <%= render @answers %>
+      <%= render @answers %>
       <% else %>
-        <%= render 'answers/no_answers' %>
+      <%= render 'answers/no_answers' %>
       <% end %>
 
-      <%= render 'answers/form', question: @question, answer: @answer, action: "Publica tu respuesta" %>
+      <%= render 'answers/form', question: @question, answer: @answer, action: "Buat jawaban " %>
 
     </div>
   </div>

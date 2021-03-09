@@ -28,6 +28,7 @@ gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'xmlrpc', '~> 0.3.0'
 gem 'gravatar-ultimate', '~> 2.0'
 gem 'redcarpet', '~> 3.4'
+gem 'annotate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

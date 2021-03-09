@@ -1,36 +1,36 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="session__header">
-      <h2>Registro de usuarios</h2>
+      <h2><%= t('label.auth.user_register').titleize %></h2>
     </div>
     <div class="session__form">
       <%# form_for @user, url: signup_path do |f| %>
       <%= form_with model: @user, url: signup_path, local: true do |f| %>
-        <%= render 'shared/error_messages', model: @user %>
+      <%= render 'shared/error_messages', model: @user %>
 
-        <div class="form-group">
-          <%= f.label :name, "Nombre:" %>
-          <%= f.text_field :name, class: "form-control", autofocus: true %>
-        </div>
+      <div class="form-group">
+        <%= f.label :name, t('label.name').titleize %>
+        <%= f.text_field :name, class: "form-control", autofocus: true %>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :email, "Correo Electrónico:" %>
-          <%= f.email_field :email, class: "form-control" %>
-        </div>
+      <div class="form-group">
+        <%= f.label :email, t('label.email').titleize  %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :password, "Contraseña:" %>
-          <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
-        </div>
+      <div class="form-group">
+        <%= f.label :password, t('label.password').titleize  %>
+        <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :password_confirmation, "Confirmar contraseña:" %>
-          <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
-        </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation, t('label.password_confirmation').titleize%>
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+      </div>
 
-        <div class="form-group">
-          <%= f.submit "Crear mi cuenta", class: "btn btn-primary" %>
-        </div>
+      <div class="form-group">
+        <%= f.submit t('label.create').titleize, class: "btn btn-primary" %>
+      </div>
       <% end %>
     </div>
   </div>

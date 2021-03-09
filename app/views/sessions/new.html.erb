@@ -7,22 +7,22 @@
       <%# form_for(:session, url: login_path) do |f| %>
       <%= form_with scope: :session, url: login_path, local: true do |f| %>
 
-        <div class="form-group">
-          <%= f.label :email, "Correo Electrónico:" %>
-          <%= f.email_field :email, class: 'form-control', autofocus: true %>
-        </div>
+      <div class="form-group">
+        <%= f.label :email, t('label.email').titleize %>
+        <%= f.email_field :email, class: 'form-control', autofocus: true %>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :password, "Contraseña:" %>
-          <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
-        </div>
+      <div class="form-group">
+        <%= f.label :password, t('label.password').titleize %>
+        <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+      </div>
 
-        <div class="form-group">
-          <%= f.submit "Iniciar sesión", class: "btn btn-primary" %>
-        </div>
+      <div class="form-group">
+        <%= f.submit t('label.login').titleize, class: "btn btn-primary" %>
+      </div>
       <% end %>
 
-      <p>Nuevo usuario? <%= link_to "Registrate ahora!", signup_path %></p>
+      <p> <%= t('label.auth.new_user').titleize %> ? <%= link_to t('label.register').titleize, signup_path %></p>
     </div>
   </div>
 </div>

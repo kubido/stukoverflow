@@ -1,0 +1,261 @@
+---
+  id:
+    label:
+      name: nama
+      email: email
+      password: password
+      password_confirmation: konfirmasi password
+      login: masuk
+      logout: keluar
+      register: daftar
+      answer: jawaban
+      search: cari
+      
+      create: buat
+      profile: profil
+      question:
+        main: pertanyaan
+        new: pertanyaan baru
+      auth:
+        new_user: user baru
+        user_register: daftar user
+    custom:
+      email_format_error: Format email tidak valid
+      login_failed: Kombinasi Email dan Kata Sandi Salah!
+      sign_up_success: Selamat datang di FlowOverStack!
+      form_has_error: Ada sesuatu yang salah ketika mengisi form
+      comment_alert_default: Minimal 15 character
+    activerecord:
+      models:
+        answer: Jawaban
+        comment: Komentar
+        question: Pertanyaan
+        user: User
+        vote: Vote
+      attributes:
+        answer:
+          body: Jawaban
+        comment:
+          body: Komentar
+        question:
+          title: Judul
+          body: Deskripsi
+        user:
+          name: Nama
+          email: Email
+          password: Password
+      errors:
+        messages:
+          record_invalid: "Validasi gagal: %{errors}"
+          restrict_dependent_destroy:
+            has_one: Tidak dapat menghapus rekaman karena ada %{record} yang berhubungan
+            has_many: Tidak dapat menghapus rekaman karena ada %{record} yang berhubungan
+    date:
+      abbr_day_names:
+      - sen
+      - sel
+      - rab
+      - kam
+      - jum
+      - sab
+      - min
+      abbr_month_names:
+      -
+      - jan
+      - feb
+      - mar
+      - apr
+      - may
+      - jun
+      - jul
+      - agu
+      - sep
+      - okt
+      - nov
+      - des
+      day_names:
+      - minggu
+      - senin
+      - selasa
+      - rabu
+      - kamis
+      - jum'at
+      - sabtu
+      formats:
+        default: "%d/%m/%Y"
+        long: "%A, %d de %B de %Y"
+        short: "%d de %b"
+      month_names:
+      -
+      - januari
+      - februari
+      - maret
+      - april
+      - mei
+      - juni
+      - juli
+      - agustus
+      - september
+      - oktober
+      - november
+      - diciembre
+      order:
+      - :day
+      - :month
+      - :year
+    datetime:
+      distance_in_words:
+        about_x_hours:
+          one: sekitar 1 jam
+          other: sekitar %{count} jam
+        about_x_months:
+          one: sekitar 1 bulan
+          other: sekitar %{count} bulan
+        about_x_years:
+          one: sekitar 1 año
+          other: sekitar %{count} tahun
+        almost_x_years:
+          one: hampir 1 año
+          other: hampir %{count} tahun
+        half_a_minute: medio menit
+        less_than_x_minutes:
+          one: kurang dari 1 menit
+          other: kurang dari %{count} menit
+        less_than_x_seconds:
+          one: kurang dari 1 detik
+          other: kurang dari %{count} detik
+        over_x_years:
+          one: lebih dari 1 año
+          other: lebih dari %{count} tahun
+        x_days:
+          one: 1 hari
+          other: "%{count} hari"
+        x_minutes:
+          one: 1 menit
+          other: "%{count} menit"
+        x_months:
+          one: 1 bulan
+          other: "%{count} bulan"
+        x_years:
+          one: 1 tahun
+          other: "%{count} tahun"
+        x_seconds:
+          one: 1 detik
+          other: "%{count} detik"
+      prompts:
+        day: Día
+        hour: Hora
+        minute: menit
+        month: Mes
+        second: detik
+        year: tahun
+    errors:
+      format: "%{attribute} %{message}"
+      messages:
+        accepted: berhasil
+        blank: tidak boleh kosong
+        present: harus diisi
+        confirmation: tidak cocok
+        empty: tidak boleh kosong
+        equal_to: dharus sama dengan %{count}
+        even: harus bilangan genap
+        exclusion: pengecualian
+        greater_than: harus lebih besar dari %{count}
+        greater_than_or_equal_to: harus lebih besar atau sama dengan %{count}
+        inclusion: termasuk
+        invalid: tidak valid
+        less_than: harus kurang dari %{count}
+        less_than_or_equal_to: harus kurang dari atau sama dengan %{count}
+        model_invalid: "Validasi gagal: %{errors}"
+        not_a_number: no es un número
+        not_an_integer: debe ser un entero
+        odd: debe ser un número impar
+        required: debe existir
+        taken: ya ha sido tomado
+        too_long:
+          one: es demasiado largo (máximo 1 caracter)
+          other: es demasiado largo (máximo %{count} caracteres)
+        too_short:
+          one: es demasiado corto (mínimo 1 caracter)
+          other: es demasiado corto (mínimo %{count} caracteres)
+        wrong_length:
+          one: longitud errónea (debe ser de 1 caracter)
+          other: longitud errónea (debe ser de %{count} caracteres)
+        other_than: debe ser distinto de %{count}
+      template:
+        body: 'Revise que los siguientes campos sean válidos:'
+        header:
+          one: "%{model} no pudo guardarse debido a 1 error"
+          other: "%{model} no pudo guardarse debido a %{count} errores"
+    helpers:
+      select:
+        prompt: Por favor selecciona
+      submit:
+        create: Crear %{model}
+        submit: Guardar %{model}
+        update: Actualizar %{model}
+    number:
+      currency:
+        format:
+          delimiter: ","
+          format: "%u%n"
+          precision: 0
+          separator: "."
+          significant: false
+          strip_insignificant_zeros: false
+          unit: "$"
+      format:
+        delimiter: ","
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+      human:
+        decimal_units:
+          format: "%n %u"
+          units:
+            billion: mil millones
+            million:
+              one: millón
+              other: millones
+            quadrillion: mil billones
+            thousand: mil
+            trillion:
+              one: billón
+              other: billones
+            unit: ''
+        format:
+          delimiter: ","
+          precision: 3
+          significant: true
+          strip_insignificant_zeros: true
+        storage_units:
+          format: "%n %u"
+          units:
+            byte:
+              one: Byte
+              other: Bytes
+            gb: GB
+            kb: KB
+            mb: MB
+            tb: TB
+      percentage:
+        format:
+          delimiter: ","
+          format: "%n%"
+      precision:
+        format:
+          delimiter: ","
+    support:
+      array:
+        last_word_connector: " y "
+        two_words_connector: " y "
+        words_connector: ", "
+    time:
+      am: am
+      formats:
+        default: "%a, %d de %b de %Y a las %H:%M:%S %Z"
+        long: "%A, %d de %B de %Y a las %I:%M %p"
+        short: "%d de %b a las %H:%M hrs"
+      pm: pm
+  

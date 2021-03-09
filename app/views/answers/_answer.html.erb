@@ -19,29 +19,29 @@
                 <tr>
                   <td class="vt">
                     <% if logged_in? && answer.user == current_user %>
-                      <div class="answer__actions">
-                        <ul>
-                          <li>
-                            <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Editar"
+                    <div class="answer__actions">
+                      <ul>
+                        <li>
+                          <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Sunting"
                                   .html_safe,
                                   edit_question_answer_path(answer.question, answer) %>
-                          </li>
-                          <li>
-                            <%= link_to " <span class='glyphicon glyphicon-trash'></span> Eliminar"
+                        </li>
+                        <li>
+                          <%= link_to " <span class='glyphicon glyphicon-trash'></span> Hapus"
                                   .html_safe,
                                   question_answer_path(answer.question, answer),
                                   method: :delete,
-                                  data: { confirm: "¿Estás seguro de eliminar esta respuesta?" } %>
-                          </li>
-                        </ul>
-                      </div>
+                                  data: { confirm: "Anda yakin ingin menghapus jawaban ini?" } %>
+                        </li>
+                      </ul>
+                    </div>
                     <% end %>
                   </td>
                   <td class="user-signature">
                     <div class="user-action-time">
                       contestada hace <%= time_ago_in_words answer.created_at %>
                     </div>
-                    <div class= "user-details">
+                    <div class="user-details">
                       <%= mail_to answer.user.email %>
                     </div>
                   </td>
@@ -64,12 +64,12 @@
                   <td></td>
                   <td>
                     <% if logged_in? %>
-                      <div class="comment-link-form">
-                        <a id="comments-link" href="#">añade un comentario</a>
-                      </div>
-                      <div class="comment-form">
-                        <%= render 'comments/form', commentable: answer, url_path: question_answer_comments_path(answer.question, answer) %>
-                      </div>
+                    <div class="comment-link-form">
+                      <a id="comments-link" href="#">tambahkan komentar</a>
+                    </div>
+                    <div class="comment-form">
+                      <%= render 'comments/form', commentable: answer, url_path: question_answer_comments_path(answer.question, answer) %>
+                    </div>
                     <% end %>
                   </td>
                 </tr>

@@ -1,50 +1,50 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <% @questions.each do |question| %>
-      <div class="questions" data-id="<%= question.id %>">
-        <div class="questions__stats">
-          <div class="questions__votes">
-            <div class="questions__mini_counts">
-              <span><%= question.votes.size %></span>
-            </div>
-            <div>Votos</div>
+    <div class="questions" data-id="<%= question.id %>">
+      <div class="questions__stats">
+        <div class="questions__votes">
+          <div class="questions__mini_counts">
+            <span><%= question.votes.size %></span>
           </div>
-          <div class="questions__answers">
-            <div class="questions__mini_counts">
-              <span><%= question.answers.size %></span>
-            </div>
-            <div>Respuestas</div>
-          </div>
+          <div>Votos</div>
         </div>
-        <div class="questions__summary">
-          <h3>
-            <%= link_to question.title, question, class: "questions__hyperlink" %>
-          </h3>
-          <p>
-            <%= truncate(strip_tags(markdown(question.body)), length: 250, escape: false) %>
-          </p>
-          <div class="questions__actions">
-            <%= link_to "<span class='glyphicon glyphicon-eye-open'></span> Ver"
-                  .html_safe,
-                  question %>
-            <% if logged_in? && question.user == current_user %>
-              <span> | </span>
-              <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Editar"
-                    .html_safe,
-                    edit_question_path(question) %>
-              <span> | </span>
-              <%= link_to " <span class='glyphicon glyphicon-trash'></span> Eliminar"
-                    .html_safe, question,
-                    method: :delete,
-                    data: { confirm: "¿Estás seguro de eliminar esta pregunta?" } %>
-            <% end %>
+        <div class="questions__answers">
+          <div class="questions__mini_counts">
+            <span><%= question.answers.size %></span>
           </div>
-          <div class="questions__started">
-            formulada hace <%= time_ago_in_words question.created_at %>
-            por <%= mail_to question.user.email %></a>
-          </div>
+          <div>Jawaban</div>
         </div>
       </div>
+      <div class="questions__summary">
+        <h3>
+          <%= link_to question.title, question, class: "questions__hyperlink" %>
+        </h3>
+        <p>
+          <%= truncate(strip_tags(markdown(question.body)), length: 250, escape: false) %>
+        </p>
+        <div class="questions__actions">
+          <%= link_to "<span class='glyphicon glyphicon-eye-open'></span> Lihat"
+                  .html_safe,
+                  question %>
+          <% if logged_in? && question.user == current_user %>
+          <span> | </span>
+          <%= link_to " <span class='glyphicon glyphicon-pencil'></span> Sunting"
+                    .html_safe,
+                    edit_question_path(question) %>
+          <span> | </span>
+          <%= link_to " <span class='glyphicon glyphicon-trash'></span> Hapus"
+                    .html_safe, question,
+                    method: :delete,
+                    data: { confirm: "Apakah Anda yakin Anda menghapus pertanyaan ini?" } %>
+          <% end %>
+        </div>
+        <div class="questions__started">
+          dibuat <%= time_ago_in_words question.created_at %> lalu
+          oleh <%= mail_to question.user.email %></a>
+        </div>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

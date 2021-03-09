@@ -5,22 +5,22 @@
     </div>
     <div class="question__form">
       <%= form_with model: question, local: true do |f| %>
-        <%= render 'shared/error_messages', model: question %>
+      <%= render 'shared/error_messages', model: question %>
 
-        <div class="form-group">
-          <%= f.label :title, "Titulo:" %>
-          <%= f.text_field :title, class: "form-control", autofocus: true %>
-        </div>
+      <div class="form-group">
+        <%= f.label :title, "Judul:" %>
+        <%= f.text_field :title, class: "form-control", autofocus: true %>
+      </div>
 
-        <div class="form-group">
-          <%= f.label :body, "Descripción:" %>
-          <%= f.text_area :body, rows: 10, class: "form-control" %>
-        </div>
+      <div class="form-group">
+        <%= f.label :body, "Deskripsi:" %>
+        <%= f.text_area :body, rows: 10, class: "form-control" %>
+      </div>
 
-        <div class="form-group">
-          <%= link_to "Cancelar", questions_path, class: "btn btn-default" %>
-          <%= f.submit action, class: "btn btn-primary" %>
-        </div>
+      <div class="form-group">
+        <%= link_to "Batal", questions_path, class: "btn btn-default" %>
+        <%= f.submit action, class: "btn btn-primary" %>
+      </div>
       <% end %>
     </div>
   </div>

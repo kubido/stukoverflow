@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      flash[:success] = 'La pregunta ha sido creada con éxito.'
+      flash[:success] = 'Pertanyaan berhasil dibuat!'
       redirect_to questions_path
     else
       render :new
@@ -40,7 +40,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      flash[:success] = 'La pregunta ha sido actualizada con éxito.'
+      flash[:success] = 'Pertanyaan berhasil diperbarui'
       redirect_to @question
     else
       render :edit
@@ -49,7 +49,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    flash[:success] = 'La pregunta ha sido eliminada con éxito.'
+    flash[:success] = 'Pertanyaan berhasil dihapus.'
     redirect_to questions_path
   end
 

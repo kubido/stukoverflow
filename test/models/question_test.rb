@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: questions
+#
+#  id         :bigint           not null, primary key
+#  title      :string(255)      not null
+#  body       :text(65535)      not null
+#  user_id    :bigint
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'test_helper'
 
 class QuestionTest < ActiveSupport::TestCase
