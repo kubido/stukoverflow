@@ -14,8 +14,10 @@
 
       <div class="form-group">
         <%= f.label :body, "Deskripsi:" %>
-        <%= f.text_area :body, rows: 10, class: "form-control" %>
+        <%= f.text_area :body, rows: 10, class: "form-control hidden", id: "question-body" %>
+        <%= text_area_tag "mde", @question.body, rows: 10, class: "form-control", id: "editor" %>
       </div>
+
 
       <div class="form-group">
         <%= link_to "Batal", questions_path, class: "btn btn-default" %>

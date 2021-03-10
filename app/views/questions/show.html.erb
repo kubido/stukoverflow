@@ -20,8 +20,8 @@
             </td>
             <td class="question__cell">
               <div class="question__body">
-                <p>
-                  <%= markdown @question.body %>
+                <p id="compiled-markdown">
+
                 </p>
                 <table class="question__footer">
                   <tbody>
@@ -105,3 +105,12 @@
     </div>
   </div>
 </div>
+
+<% content_for :js_bottom do %>
+<script>
+  var compiled = document.querySelector('#compiled-markdown');
+  compiled.innerHTML = marked("<%= markdown @question.body %>", {
+    sanitize: true
+  });
+</script>
+<% end %>

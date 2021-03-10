@@ -1,1 +1,19 @@
 <%= render 'form', question: @question, title: "Buat Pertanyaan", action: "Buat" %>
+
+<% content_for :js_bottom do %>
+
+<script>
+  var simplemde = new SimpleMDE({
+    element: document.getElementById("editor"),
+    showIcons: ["code", "table"],
+    renderingConfig: {
+      singleLineBreaks: false,
+      codeSyntaxHighlighting: true,
+    },
+  });
+  simplemde.codemirror.on("change", function() {
+    let textInput = document.querySelector('#question-body')
+    textInput.innerHTML = simplemde.value()
+  });
+</script>
+<% end %>

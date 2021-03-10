@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flowoverstack</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= render 'layouts/navbar' %>
-    <%= render 'layouts/alerts' %>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+<head>
+  <title>Flowoverstack</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">
+</head>
+
+<body>
+  <%= render 'layouts/navbar' %>
+  <%= render 'layouts/alerts' %>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <%= yield :js_bottom %>
+</body>
+
 </html>
