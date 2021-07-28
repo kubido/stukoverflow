@@ -3,7 +3,7 @@ es:
   custom:
     email_format_error: no tiene un formato valido
     login_failed: ¡Combinación de Correo electrónico y Contraseña incorrecta!
-    sign_up_success: ¡Bienvenido a FlowOverStack!
+    sign_up_success: ¡Bienvenido a StukOverflow!
     form_has_error: El formulario contiene
     comment_alert_default: Ingrese al menos 15 caracteres
   activerecord:

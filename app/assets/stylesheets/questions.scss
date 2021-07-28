@@ -1,5 +1,5 @@
 .questions {
-  float: left;
+  display: flex;
   padding-top: 5px;
   overflow: hidden;
   width: 728px;
@@ -8,14 +8,15 @@
     color: #07C;
     text-decoration: none;
   }
+  &__infos{
+    display: flex;
+    justify-content: space-between;
+  }
   &__stats {
-    float: left;
-    margin-top: 12px;
-    margin-right: 10px;
-    margin-left: 5px;
-    margin-bottom: 17px;
-    width: 70px;
-    vertical-align: top;
+    display: flex;
+    justify-content: space-around;
+    width: 140px;
+    align-items: center;
   }
   &__mini_counts {
     font-size: 18px;
@@ -28,8 +29,8 @@
     height: 40px;
     font-size: 11px;
     color: #848d95;
-    margin-bottom: 8px;
   }
+
   &__answers {
     text-align: center;
     height: 40px;
@@ -37,8 +38,10 @@
     color: #848d95;
   }
   &__summary {
-    float: left;
-    width: 630px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 15px;
     h3 {
       display: block;
       font-size: 15px;

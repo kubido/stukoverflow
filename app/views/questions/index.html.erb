@@ -7,7 +7,7 @@
           <div class="questions__mini_counts">
             <span><%= question.votes.size %></span>
           </div>
-          <div>Votos</div>
+          <div>Votes</div>
         </div>
         <div class="questions__answers">
           <div class="questions__mini_counts">
@@ -20,9 +20,7 @@
         <h3>
           <%= link_to question.title, question, class: "questions__hyperlink" %>
         </h3>
-        <p>
-          <%= truncate(strip_tags(markdown(question.body)), length: 250, escape: false) %>
-        </p>
+        <div class="questions__infos">
         <div class="questions__actions">
           <%= link_to "<span class='glyphicon glyphicon-eye-open'></span> Lihat"
                   .html_safe,
@@ -42,6 +40,7 @@
         <div class="questions__started">
           dibuat <%= time_ago_in_words question.created_at %> lalu
           oleh <%= mail_to question.user.email %></a>
+        </div>
         </div>
       </div>
     </div>
